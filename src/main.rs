@@ -6,13 +6,13 @@ use std::thread::sleep;
 use std::time::Duration;
 
 fn main() {
-    let path = "/path_to_your_pdf_file.pdf";
+    let path = "/test.pdf";
     let text = extract_text_from_pdf(path).unwrap_or_else(|err| {
         eprintln!("Error extracting text: {}", err);
         String::new()
     });
 
-    display_text_word_by_word(&text, 200); // 200ms per word
+    display_text_word_by_word(&text, 200);
 }
 
 fn extract_text_from_pdf(path: &str) -> Result<String, pdf_extract::Error> {
